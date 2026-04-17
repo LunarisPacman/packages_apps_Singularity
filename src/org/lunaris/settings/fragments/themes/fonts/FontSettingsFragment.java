@@ -21,6 +21,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.SystemProperties;
 import android.os.UserHandle;
 import android.provider.Settings;
 import android.view.HapticFeedbackConstants;
@@ -53,15 +54,19 @@ public class FontSettingsFragment extends SettingsPreferenceFragment implements
 
     private static final String KEY_FONT_MODE = "font_mode";
     private static final String KEY_PREBUILT_FONTS = "system_font";
+    private static final String KEY_EMOJI_STYLE = "emoji_style";
     private static final String KEY_CUSTOM_FONT_PICKER = "custom_font_picker";
     private static final String KEY_GITHUB_FONT_PICKER = "github_font_picker";
     private static final String KEY_CUSTOM_FONT_INFO = "custom_font_info";
     private static final String KEY_RESET_CUSTOM_FONT = "reset_custom_font";
     private static final String KEY_REBOOT_FOR_FONT = "reboot_for_font";
+    private static final String PROP_EMOJI_STYLE = "persist.sys.ax_emoji_style";
+    private static final String DEFAULT_EMOJI_STYLE = "ios";
 
     private static final int REQUEST_PICK_FONT = 1001;
 
     private SystemSettingListPreference mFontModePref;
+    private SystemSettingListPreference mEmojiStylePref;
     private Preference mPrebuiltFontsPref;
     private Preference mCustomFontPickerPref;
     private Preference mGithubFontPickerPref;
@@ -86,6 +91,12 @@ public class FontSettingsFragment extends SettingsPreferenceFragment implements
         mFontModePref.setOnPreferenceChangeListener(this);
 
         mPrebuiltFontsPref = findPreference(KEY_PREBUILT_FONTS);
+
+        mEmojiStylePref = findPreference(KEY_EMOJI_STYLE);
+        if (mEmojiStylePref != null) {
+            mEmojiStylePref.setValue(SystemProperties.get(PROP_EMOJI_STYLE, DEFAULT_EMOJI_STYLE));
+            mEmojiStylePref.setOnPreferenceChangeListener(this);
+        }
 
         mCustomFontPickerPref = findPreference(KEY_CUSTOM_FONT_PICKER);
         mCustomFontPickerPref.setOnPreferenceClickListener(preference -> {
@@ -281,6 +292,12 @@ public class FontSettingsFragment extends SettingsPreferenceFragment implements
             }
 
             updateFontPreferences();
+            return true;
+        }
+
+        if (preference == mEmojiStylePref) {
+            SystemProperties.set(PROP_EMOJI_STYLE, (String) newValue);
+            showRebootDialog();
             return true;
         }
 

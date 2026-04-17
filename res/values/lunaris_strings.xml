@@ -1647,6 +1647,8 @@
     <string name="font_mode_title">Font source</string>
     <string name="font_settings_title">Font Settings</string>
     <string name="font_settings_summary">Customize system fonts</string>
+    <string name="emoji_style_title">Emoji style</string>
+    <string name="emoji_style_summary">Choose the system emoji pack without changing text fonts</string>
 
     <!-- Custom Font Picker -->
     <string name="custom_font_picker_title">Pick custom font</string>
