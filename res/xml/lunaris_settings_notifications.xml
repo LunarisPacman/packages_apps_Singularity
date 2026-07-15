@@ -113,6 +113,13 @@
             android:summary="@string/notification_heads_up_summary"
             android:defaultValue="true" />
 
+        <org.lunaris.settings.preferences.SystemSettingSwitchPreference
+            android:key="heads_up_blur_enabled"
+            android:title="@string/heads_up_blur_title"
+            android:summary="@string/heads_up_blur_summary"
+            android:defaultValue="false"
+            android:dependency="heads_up_notifications_enabled" />
+
         <org.lunaris.settings.preferences.SystemPropertySwitchPreference
             android:key="persist.sys.compact_heads_up_notification.always_show"
             android:title="@string/compact_heads_up_notifications_enabled_title"

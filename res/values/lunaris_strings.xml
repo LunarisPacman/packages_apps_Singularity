@@ -859,6 +859,10 @@
     <string name="notification_heads_up_timeout_title">Time out</string>
     <string name="notification_heads_up_timeout_summary">Time to display heads up notifications</string>
 
+    <!-- Heads up blur -->
+    <string name="heads_up_blur_title">Heads up blur</string>
+    <string name="heads_up_blur_summary">Apply a real-time background blur effect to heads up notifications</string>
+
     <!-- Less boring heads up -->
     <string name="less_boring_heads_up_title">Less boring</string>
     <string name="less_boring_heads_up_summary">Display popup notifications only for alarm, dialer and messaging app</string>
