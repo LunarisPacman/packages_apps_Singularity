@@ -265,6 +265,13 @@
             android:entryValues="@array/qs_brightness_slider_shape_values"
             android:defaultValue="0" />
 
+<org.lunaris.settings.preferences.SystemSettingListPreference
+            android:key="qs_brightness_slider_corner"
+            android:title="@string/qs_brightness_slider_corner_title"
+            android:entries="@array/qs_widget_slider_corner_entries"
+            android:entryValues="@array/qs_widget_slider_corner_values"
+            android:defaultValue="0" />
+
         <lineageos.preference.LineageSecureSettingListPreference
             android:key="qs_brightness_slider_position"
             android:title="@string/qs_brightness_slider_position_title"
@@ -308,6 +315,13 @@
             android:title="@string/qs_volume_slider_shape_title"
             android:entries="@array/qs_brightness_slider_shape_entries"
             android:entryValues="@array/qs_brightness_slider_shape_values"
+            android:defaultValue="0" />
+
+<org.lunaris.settings.preferences.SystemSettingListPreference
+            android:key="qs_volume_slider_corner"
+            android:title="@string/qs_volume_slider_corner_title"
+            android:entries="@array/qs_widget_slider_corner_entries"
+            android:entryValues="@array/qs_widget_slider_corner_values"
             android:defaultValue="0" />
 
         <org.lunaris.settings.preferences.SystemSettingListPreference
