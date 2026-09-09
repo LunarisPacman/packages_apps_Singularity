@@ -2814,6 +2814,12 @@
     <string name="dynamic_island_live_scores_summary">Show live scores for sports in the island for apps that give live score notification.</string>
     <string name="dynamic_island_lyrics_title">Show lyrics</string>
     <string name="dynamic_island_lyrics_summary">Show lyrics for supported apps in a card below the music card in the island</string>
+    <string name="dynamic_island_calls_title">Phone calls</string>
+    <string name="dynamic_island_calls_summary">Show incoming call alerts and ongoing call controls in the island</string>
+    <string name="dynamic_island_bluetooth_title">Bluetooth &amp; audio accessories</string>
+    <string name="dynamic_island_bluetooth_summary">Show connected earphones, headphones, and battery status in the island</string>
+    <string name="dynamic_island_ringer_mode_title">Ringer &amp; sound mode</string>
+    <string name="dynamic_island_ringer_mode_summary">Show animated ringer mode status when switching between ring, vibrate, and silent</string>
     <string name="dynamic_island_customization_title">Dynamic Island Customization</string>
     <string name="dynamic_island_width_scale_title">Width Scale</string>
     <string name="dynamic_island_height_scale_title">Height Scale</string>
